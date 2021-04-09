@@ -1,0 +1,45 @@
+{
+  "name": "Accommodations",
+  "version": "1.0.0",
+  "description": "A simple CAP project.",
+  "repository": "<Add your repository here>",
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "@sap/cds": "^5",
+    "@sap/xsenv": "^3.1.0",
+    "@sap/xssec": "^3.1.2",
+    "express": "^4",
+    "hdb": "^0.18.3"
+  },
+  "devDependencies": {
+    "@sap/ux-specification": "^1.78.13",
+    "sqlite3": "5.0.0"
+  },
+  "scripts": {
+    "start": "cds run"
+  },
+  "sapux": [
+    "app/accommodations"
+  ],
+  "cds": {
+    "requires": {
+      "db": {
+        "kind": "sql"
+      },
+      "uaa": {
+        "kind": "xsuaa",
+        "credentials": {}
+      },
+      "workflowService": {
+        "kind": "rest",
+        "credentials": {
+          "destination": "AccommodationsWF"
+        }
+      }
+    },
+    "hana": {
+      "deploy-format": "hdbtable"
+    }
+  }
+}
