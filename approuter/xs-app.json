@@ -8,6 +8,12 @@
     },
     "routes": [
         {
+            "source": "^/app/accommodations/webapp/images/(.*)$",
+            "target": "$1",
+            "localDir": "resources/accommodations/webapp/images",
+            "authenticationType": "none"
+        },
+        {
             "source": "^/app/(.*)$",
             "target": "$1",
             "localDir": "resources",

@@ -9,9 +9,10 @@ service Accommodations {
         action enquire(
         @title :                           'Date you want to move in'
         movein : Date);
-    }
+    };
 
-    entity Employees        as projection on my.Employees
+    entity Employees        as projection on my.Employees;
+    entity UnitsAPI         as projection on my.Units;
 
     @readonly
     entity distinctEmirates as select distinct emirate from my.Units

@@ -27,7 +27,6 @@ modules:
     - name: Accommodations-db
     - name: Accommodations-uaa
     - name: Accommodations-dest
-    - name: workflow_mta
    provides:
     - name: srv-api      # required by consumers of CAP services (e.g. approuter)
       properties:
@@ -95,13 +94,6 @@ resources:
      config:
        xsappname: Accommodations-${space}    #  name + space dependency
        tenant-mode: dedicated
-# ------------------------------------------------------------
- - name: workflow_mta
-# ------------------------------------------------------------
-   parameters:
-     service-plan: standard
-     service: workflow
-   type: org.cloudfoundry.existing-service
 # ------------------------------------------------------------
  - name: Accommodations-dest
 # ------------------------------------------------------------
